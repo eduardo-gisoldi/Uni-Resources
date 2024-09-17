@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Unidade 1 - Exerício 1</title>
+    <script>
+      
+      const numeros = [10, 20, 30, 40, 50];
+
+
+      //ex 1. Mostre a soma dos numeros do array. Use foreach.
+      let total = 0;
+      numeros.forEach((numero, i, numeros) => {
+        total += numero;
+      });
+      console.log(total);
+
+      //ex 2. Mostre os numeros maiores que 25. Use foreach.
+      numeros.forEach((numero, i, numeros) => {
+        if (numero > 25) console.log(numero);
+      });
+
+      //ex 3. Mostre os numeros pares. Use filter.
+      const numerosPares = numeros.filter((numero, i ,numeros) => numero % 2 == 0);
+      
+      //ex 4. Monstre o primeiro numero maior que 25. Use find.
+      const primeiroMaiorQue25 = numeros.find((numero, i, numeros) => numero > 25);
+      
+      //ex 5. Mostre um array novo com os numeros dobrados do array numeros. Use map.
+      const numerosDobrado = numeros.map((numero, i ,numeros) => numero * 2);
+      
+
+
+      const animais = ["gato", "cachorro", "elefante", "rato", "leao"];
+
+
+      //ex 6. Mostre os animais. Use o foreach.
+      animais.forEach((animal, i, animais) => console.log(animal));
+      
+      //ex 7. Mostre os animais com mais de 5 letras. Use filter.
+      animais.filter((animal, i, animais) => {
+        if(animal.length > 5) console.log(animal)
+      });
+      
+      //ex 8. Mostre o primeiro animal com mais de 6 letras. Use find.
+      console.log(animais.find((animal, i, animais) => animal.length > 6));
+      
+      //ex 9. Mostre um array novo com os animais em maiúsculo.
+      const animaisMaiusculo = animais.map((animal, i, animais) => animal.toUpperCase());
+      animaisMaiusculo.forEach((animal, i, animaisMaiusculo) => console.log(animal));
+
+      //ex 10. Criar uma função chamada busca que recebe um array e uma função de callback, e retorna o primeiro elemento do array que atende a uma determinada condição definida pela função de call-back (que retorna verdade se o numero for par), caso contrário retorna undefined.
+      function busca(array, callback) {
+        return array.find((elemento, i, array) => callback(elemento));
+      }
+      
+      function ehPar(n) {
+        return n % 2 == 0;
+      } 
+      const primeiroPar = busca(nums, ehPar);
+
+    </script>
+  </head>
+</html>

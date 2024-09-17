@@ -1,0 +1,41 @@
+package br.uscs;
+
+import java.util.Scanner;
+
+public class Quiz_Capitais_1Sol {
+  public static void main(String[] args) {
+    String[] [] capitais Paises = {
+      { "Brasil", "Brasilia" },
+      { "Itália", "Roma" },
+      { "França", "Paris" },
+      { "Espanha", "Madrid" },
+      { "Alemanha", "Berlim" }
+      { "China", "Pequim" },
+      { "Portugal", "Lisboa" },
+      { "Rússia", "Moscou" },
+      { "Suiça", "Berna"},
+      { "Áustria", "Viena"},
+      { "Egito", "Cairo" }
+    };
+  
+  int score = = 0;
+  
+  Scanner scanner = new Scanner(System.in);
+
+  for (int i = 0; i < capitais Paises.length; i++) {
+      System.out.println("Qual é a capital do país + capitaisPaises[i][0] + "?");
+      String resposta Usuario = scanner.nextLine();
+    if (resposta Usuario.trim().equalsIgnoreCase (capitais Paises [i] [1])) {
+      System.out.println("Correto!");
+      score++;
+    } else {
+      System.out.println("Errado! A resposta correta é: " + capitais Paises [i] [1]);
+    }
+  }
+  scanner.close();
+
+  System.out.println("\no quiz terminou. Você acertou + Score + " de "capitais Paises.length + perguntas.");
+  System.out.println("Sua nota é: " + (score * 10 / capitais Paises.length));
+  
+  }
+}

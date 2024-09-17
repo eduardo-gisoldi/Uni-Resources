@@ -1,0 +1,12 @@
+{
+  idFunc: 1,
+  nome: "joao",
+  departamento: {
+    idDeps: 231,
+    nome: "TI"
+  },
+  cargo: {
+    idCargos: 1231,
+    nome: "dev"
+  }
+}

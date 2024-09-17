@@ -1,0 +1,1028 @@
+{
+    "modelName": "New Model",
+    "collections": [
+        {
+            "collectionName": "Medicos",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "_id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "objectId",
+                    "primaryKey": true,
+                    "required": true,
+                    "GUID": "8ede1e13-5c3e-459c-93c6-fd5d527f6b2a",
+                    "error": {},
+                    "childRelationships": [
+                        "c9f60418-67cf-417a-856b-8043091a6022"
+                    ]
+                },
+                {
+                    "name": "crm",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "numeric",
+                    "error": {},
+                    "primaryKey": false,
+                    "required": true,
+                    "GUID": "5dca0592-ec12-4326-901f-51945eef4a69",
+                    "childRelationships": [
+                        "73a26fd5-7483-47dd-b44b-9df9517d7701"
+                    ]
+                },
+                {
+                    "name": "nome",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "f7fb00b6-ffe0-4130-9841-3596188e1e19",
+                    "required": true,
+                    "error": {},
+                    "childRelationships": [
+                        "7011be01-fe76-4672-8c75-f4e719811ce1"
+                    ]
+                },
+                {
+                    "name": "especialidades",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "array",
+                    "properties": [
+                        {
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "8b3f939a-b78e-4b24-bfee-2e38a3b92eb8",
+                            "arrayItem": true
+                        }
+                    ],
+                    "additionalItems": true,
+                    "GUID": "37727ce7-b54e-4fa0-9a13-9ba46c8d1271",
+                    "required": true,
+                    "error": {}
+                },
+                {
+                    "name": "telefones",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "array",
+                    "properties": [
+                        {
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "3edc3e93-47cf-42e9-9f92-acf52b5a7f09",
+                            "arrayItem": true
+                        }
+                    ],
+                    "additionalItems": true,
+                    "GUID": "9f3a8586-8180-4b21-adad-1a93346d32a3",
+                    "required": true,
+                    "error": {}
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "0adad84a-569c-42e8-82f8-36aba2265bb8"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "validationLevel": "Off",
+            "validationAction": "Warn",
+            "storageEngineName": "WiredTiger",
+            "collectionUsers": [],
+            "indexes": [],
+            "collation": {},
+            "sharding": {
+                "unique": true,
+                "collation": "null"
+            },
+            "GUID": "5b5a1ee7-a47c-4d92-abc0-4ae1e00e776f",
+            "bucketId": "ff78d41a-0cf2-4d84-a68e-090c324a8af1"
+        },
+        {
+            "collectionName": "Pacientes",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "_id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "objectId",
+                    "error": {},
+                    "primaryKey": true,
+                    "required": true,
+                    "GUID": "8ea01b76-4dfd-4cb6-b7f1-fedfe53bce74",
+                    "childRelationships": [
+                        "0fb8cb8e-c2c5-41db-8cfb-1de45b030a25"
+                    ]
+                },
+                {
+                    "name": "cpf",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "numeric",
+                    "error": {},
+                    "required": true,
+                    "GUID": "6d01b2cd-c927-4614-86b0-d48484b685a3",
+                    "childRelationships": [
+                        "61ded7c1-5eb2-49a6-a9d8-a81fead3bbbe"
+                    ]
+                },
+                {
+                    "name": "nome",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "e2fdf73c-c609-4e12-8741-c084a5b2289f",
+                    "required": true,
+                    "error": {},
+                    "childRelationships": [
+                        "d2f1bd4d-7ce7-4028-b31a-258f60745f65"
+                    ]
+                },
+                {
+                    "name": "sexo",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "66bae58a-a90a-4aad-9058-26c724e4fe96",
+                    "required": true,
+                    "error": {}
+                },
+                {
+                    "name": "nascimento",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "date",
+                    "primaryKey": false,
+                    "error": {},
+                    "GUID": "a5342c0a-6126-47dc-ae39-c160e26ee571"
+                },
+                {
+                    "name": "endereco",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "document",
+                    "properties": [
+                        {
+                            "name": "cep",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "8f50eee2-3ef4-4716-8eb8-3bb0612a51c7",
+                            "error": {}
+                        },
+                        {
+                            "name": "logradouro",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "68aab95b-602a-4b9a-8eb0-a73eb8821cfa",
+                            "error": {}
+                        },
+                        {
+                            "name": "numero",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "16cea4fb-9ae8-4b04-b7ac-c7609e687d65",
+                            "error": {}
+                        }
+                    ],
+                    "additionalProperties": false,
+                    "error": {},
+                    "GUID": "83b22bf1-96eb-498d-8175-6adcd3bc8f55"
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "c48eecdd-0d64-42f5-bf38-fd8daf2216a8"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "validationLevel": "Off",
+            "validationAction": "Warn",
+            "storageEngineName": "WiredTiger",
+            "collectionUsers": [],
+            "indexes": [],
+            "collation": {},
+            "sharding": {
+                "unique": true,
+                "collation": "null"
+            },
+            "GUID": "18bc2b43-2665-4366-b53d-600f140a86ae",
+            "bucketId": "ff78d41a-0cf2-4d84-a68e-090c324a8af1"
+        },
+        {
+            "collectionName": "Medicamentos",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "_id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "objectId",
+                    "error": {},
+                    "primaryKey": true,
+                    "required": true,
+                    "GUID": "9c1578c8-0f74-4c18-bba7-b5d548b5d204"
+                },
+                {
+                    "name": "nome",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "d865f108-d3b6-41e5-ab41-ed3e993266dd",
+                    "required": true,
+                    "error": {}
+                },
+                {
+                    "name": "fabricante",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "document",
+                    "properties": [
+                        {
+                            "name": "nome",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "91c7f1d2-bb3e-4a2f-876f-021efa52acd5",
+                            "error": {}
+                        },
+                        {
+                            "name": "cnpj",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "numeric",
+                            "error": {},
+                            "GUID": "df7af85f-ac60-45c9-a02b-0f18e21a1e66"
+                        }
+                    ],
+                    "additionalProperties": false,
+                    "GUID": "fb6811f0-9be8-41fc-81bf-8f1b2db2de06",
+                    "required": true,
+                    "error": {}
+                },
+                {
+                    "name": "data_fabricacao",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "date",
+                    "primaryKey": false,
+                    "error": {},
+                    "GUID": "d594a6f7-cc1a-42ca-b609-d94f17b73f5b"
+                },
+                {
+                    "name": "data_vencimento",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "date",
+                    "primaryKey": false,
+                    "GUID": "f52d4b33-5923-40ea-9a06-5d6b9c415885",
+                    "required": true,
+                    "error": {}
+                },
+                {
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "6dbbb232-c336-41cb-b2bb-76f4fde497f7",
+                    "name": "bula",
+                    "error": {}
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "f1737daf-85d6-4f9c-a0f7-f666c2e32ab9"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "validationLevel": "Off",
+            "validationAction": "Warn",
+            "storageEngineName": "WiredTiger",
+            "collectionUsers": [],
+            "indexes": [],
+            "collation": {},
+            "sharding": {
+                "unique": true,
+                "collation": "null"
+            },
+            "GUID": "a46c4a07-7d1d-4238-bdb3-d940a3ca20ca",
+            "bucketId": "ff78d41a-0cf2-4d84-a68e-090c324a8af1"
+        },
+        {
+            "collectionName": "Receitas",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "_id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "23188bb0-0628-4c57-92e5-37677e0d5026",
+                    "required": true,
+                    "primaryKey": true,
+                    "error": {}
+                },
+                {
+                    "name": "emissao",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "date",
+                    "primaryKey": false,
+                    "error": {},
+                    "GUID": "3fa6ca77-518a-4039-8c9b-31a5e0c17da0"
+                },
+                {
+                    "name": "tipo_de_receita",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "boolean",
+                    "GUID": "f9dacc59-2f29-4060-a0cf-7e5aba37950c",
+                    "error": {}
+                },
+                {
+                    "name": "medico",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "document",
+                    "properties": [
+                        {
+                            "name": "_id",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "objectId",
+                            "GUID": "2ba63f90-4996-4251-93bc-9e5aaf8f1d52",
+                            "required": true,
+                            "error": {},
+                            "relationshipType": "Foreign Key",
+                            "foreignCollection": "5b5a1ee7-a47c-4d92-abc0-4ae1e00e776f",
+                            "foreignField": [
+                                "5b5a1ee7-a47c-4d92-abc0-4ae1e00e776f",
+                                "8ede1e13-5c3e-459c-93c6-fd5d527f6b2a"
+                            ],
+                            "parentRelationship": "c9f60418-67cf-417a-856b-8043091a6022"
+                        },
+                        {
+                            "name": "crm",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "numeric",
+                            "GUID": "a32fb30b-fdb1-430b-80dd-03a3eeb0db61",
+                            "relationshipType": "Foreign Master",
+                            "foreignCollection": "5b5a1ee7-a47c-4d92-abc0-4ae1e00e776f",
+                            "foreignField": [
+                                "5b5a1ee7-a47c-4d92-abc0-4ae1e00e776f",
+                                "5dca0592-ec12-4326-901f-51945eef4a69"
+                            ],
+                            "parentRelationship": "73a26fd5-7483-47dd-b44b-9df9517d7701",
+                            "error": {}
+                        },
+                        {
+                            "name": "nome",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "b1bde7e4-d8a1-497b-a713-4586b1ef85ea",
+                            "relationshipType": "Foreign Master",
+                            "foreignCollection": "5b5a1ee7-a47c-4d92-abc0-4ae1e00e776f",
+                            "foreignField": [
+                                "5b5a1ee7-a47c-4d92-abc0-4ae1e00e776f",
+                                "f7fb00b6-ffe0-4130-9841-3596188e1e19"
+                            ],
+                            "parentRelationship": "7011be01-fe76-4672-8c75-f4e719811ce1",
+                            "error": {}
+                        }
+                    ],
+                    "additionalProperties": false,
+                    "error": {},
+                    "GUID": "6b66a44f-b3ff-448a-a2ea-6dc37a4e4d8e"
+                },
+                {
+                    "name": "paciente",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "document",
+                    "properties": [
+                        {
+                            "name": "_id",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "objectId",
+                            "error": {},
+                            "GUID": "b9d7724f-8c1f-4687-86f7-a26a41ddc5f5",
+                            "relationshipType": "Foreign Key",
+                            "foreignCollection": "18bc2b43-2665-4366-b53d-600f140a86ae",
+                            "foreignField": [
+                                "18bc2b43-2665-4366-b53d-600f140a86ae",
+                                "8ea01b76-4dfd-4cb6-b7f1-fedfe53bce74"
+                            ],
+                            "parentRelationship": "0fb8cb8e-c2c5-41db-8cfb-1de45b030a25"
+                        },
+                        {
+                            "name": "cpf",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "numeric",
+                            "GUID": "dbc2aa4a-a7ee-4b44-8669-dc878649103c",
+                            "relationshipType": "Foreign Master",
+                            "foreignCollection": "18bc2b43-2665-4366-b53d-600f140a86ae",
+                            "foreignField": [
+                                "18bc2b43-2665-4366-b53d-600f140a86ae",
+                                "6d01b2cd-c927-4614-86b0-d48484b685a3"
+                            ],
+                            "parentRelationship": "61ded7c1-5eb2-49a6-a9d8-a81fead3bbbe",
+                            "error": {}
+                        },
+                        {
+                            "name": "nome",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "d76eef82-9571-43bd-843d-9823b10f69cf",
+                            "relationshipType": "Foreign Master",
+                            "foreignCollection": "18bc2b43-2665-4366-b53d-600f140a86ae",
+                            "foreignField": [
+                                "18bc2b43-2665-4366-b53d-600f140a86ae",
+                                "e2fdf73c-c609-4e12-8741-c084a5b2289f"
+                            ],
+                            "parentRelationship": "d2f1bd4d-7ce7-4028-b31a-258f60745f65",
+                            "error": {}
+                        },
+                        {
+                            "name": "sexo",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "b9f7c66b-61da-43f5-8182-c3399b7eecb8",
+                            "error": {}
+                        }
+                    ],
+                    "additionalProperties": false,
+                    "GUID": "71bc653c-c2c9-4c37-a81a-604ee78d929d",
+                    "required": true,
+                    "error": {}
+                },
+                {
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "array",
+                    "properties": [
+                        {
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "document",
+                            "properties": [
+                                {
+                                    "name": "_id",
+                                    "hackoladeMeta": {},
+                                    "isActivated": true,
+                                    "type": "objectId",
+                                    "GUID": "089cd80b-12ab-4859-bd38-e6ed365cbbee",
+                                    "error": {}
+                                }
+                            ],
+                            "additionalProperties": false,
+                            "error": {},
+                            "GUID": "0d071a13-f670-4f6b-b99b-2885bbca88f3",
+                            "arrayItem": true
+                        }
+                    ],
+                    "additionalItems": true,
+                    "GUID": "455af3f1-2f04-4f27-930d-542d081a3148",
+                    "name": "medicamentos",
+                    "error": {}
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "6dd713ae-d2e5-49b7-b838-140a4277f20b"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "validationLevel": "Off",
+            "validationAction": "Warn",
+            "storageEngineName": "WiredTiger",
+            "collectionUsers": [],
+            "indexes": [],
+            "collation": {},
+            "sharding": {
+                "unique": true,
+                "collation": "null"
+            },
+            "GUID": "60ead818-5163-4de8-a07c-0ccd191a9ff6",
+            "bucketId": "ff78d41a-0cf2-4d84-a68e-090c324a8af1"
+        }
+    ],
+    "buckets": [
+        {
+            "name": "New_Database",
+            "type": "bucket",
+            "collectionIds": [
+                "5b5a1ee7-a47c-4d92-abc0-4ae1e00e776f",
+                "18bc2b43-2665-4366-b53d-600f140a86ae",
+                "a46c4a07-7d1d-4238-bdb3-d940a3ca20ca",
+                "60ead818-5163-4de8-a07c-0ccd191a9ff6"
+            ],
+            "backgroundColor": {
+                "r": 216,
+                "g": 0,
+                "b": 115,
+                "a": 1
+            },
+            "show": true,
+            "isActivated": true,
+            "GUID": "ff78d41a-0cf2-4d84-a68e-090c324a8af1"
+        }
+    ],
+    "views": [],
+    "relationships": [
+        {
+            "name": "fk_Medicos._id_to_Receitas.medico._id",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "5b5a1ee7-a47c-4d92-abc0-4ae1e00e776f",
+                    "8ede1e13-5c3e-459c-93c6-fd5d527f6b2a"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "60ead818-5163-4de8-a07c-0ccd191a9ff6",
+                    "6b66a44f-b3ff-448a-a2ea-6dc37a4e4d8e",
+                    "2ba63f90-4996-4251-93bc-9e5aaf8f1d52"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "0..n",
+            "parentCollection": "5b5a1ee7-a47c-4d92-abc0-4ae1e00e776f",
+            "childCollection": "60ead818-5163-4de8-a07c-0ccd191a9ff6",
+            "GUID": "c9f60418-67cf-417a-856b-8043091a6022",
+            "hackoladeStyles": {
+                "GUID": "d93f54bf-17d3-46dd-b47c-4f11533d460e",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 1004.75,
+                        "y": 1301
+                    },
+                    {
+                        "x": 1004.75,
+                        "y": 1265.4000244140625
+                    },
+                    {
+                        "x": 982.75,
+                        "y": 1265.4000244140625
+                    },
+                    {
+                        "x": 982.75,
+                        "y": 1229.800048828125
+                    }
+                ],
+                "sides": [
+                    "top",
+                    "bottom"
+                ]
+            }
+        },
+        {
+            "name": "fk_Medicos.crm_to_Receitas.medico.crm",
+            "relationshipType": "Foreign Master",
+            "parentField": [
+                [
+                    "5b5a1ee7-a47c-4d92-abc0-4ae1e00e776f",
+                    "5dca0592-ec12-4326-901f-51945eef4a69"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "60ead818-5163-4de8-a07c-0ccd191a9ff6",
+                    "6b66a44f-b3ff-448a-a2ea-6dc37a4e4d8e",
+                    "a32fb30b-fdb1-430b-80dd-03a3eeb0db61"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "0..n",
+            "parentCollection": "5b5a1ee7-a47c-4d92-abc0-4ae1e00e776f",
+            "childCollection": "60ead818-5163-4de8-a07c-0ccd191a9ff6",
+            "GUID": "73a26fd5-7483-47dd-b44b-9df9517d7701",
+            "hackoladeStyles": {
+                "GUID": "c6276240-d572-4aed-ac95-01857946ea18",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 921.5,
+                        "y": 1301
+                    },
+                    {
+                        "x": 921.5,
+                        "y": 1265.4000244140625
+                    },
+                    {
+                        "x": 915.5,
+                        "y": 1265.4000244140625
+                    },
+                    {
+                        "x": 915.5,
+                        "y": 1229.800048828125
+                    }
+                ],
+                "sides": [
+                    "top",
+                    "bottom"
+                ]
+            }
+        },
+        {
+            "name": "fk_Medicos.nome_to_Receitas.medico.nome",
+            "relationshipType": "Foreign Master",
+            "parentField": [
+                [
+                    "5b5a1ee7-a47c-4d92-abc0-4ae1e00e776f",
+                    "f7fb00b6-ffe0-4130-9841-3596188e1e19"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "60ead818-5163-4de8-a07c-0ccd191a9ff6",
+                    "6b66a44f-b3ff-448a-a2ea-6dc37a4e4d8e",
+                    "b1bde7e4-d8a1-497b-a713-4586b1ef85ea"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "0..n",
+            "parentCollection": "5b5a1ee7-a47c-4d92-abc0-4ae1e00e776f",
+            "childCollection": "60ead818-5163-4de8-a07c-0ccd191a9ff6",
+            "GUID": "7011be01-fe76-4672-8c75-f4e719811ce1",
+            "hackoladeStyles": {
+                "GUID": "649ca5d8-46a2-4ef5-830e-de6fe4a93096",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 838.25,
+                        "y": 1301
+                    },
+                    {
+                        "x": 838.25,
+                        "y": 1265.4000244140625
+                    },
+                    {
+                        "x": 848.25,
+                        "y": 1265.4000244140625
+                    },
+                    {
+                        "x": 848.25,
+                        "y": 1229.800048828125
+                    }
+                ],
+                "sides": [
+                    "top",
+                    "bottom"
+                ]
+            }
+        },
+        {
+            "name": "fk_Pacientes._id_to_Receitas.paciente._id",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "18bc2b43-2665-4366-b53d-600f140a86ae",
+                    "8ea01b76-4dfd-4cb6-b7f1-fedfe53bce74"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "60ead818-5163-4de8-a07c-0ccd191a9ff6",
+                    "71bc653c-c2c9-4c37-a81a-604ee78d929d",
+                    "b9d7724f-8c1f-4687-86f7-a26a41ddc5f5"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "0..n",
+            "parentCollection": "18bc2b43-2665-4366-b53d-600f140a86ae",
+            "childCollection": "60ead818-5163-4de8-a07c-0ccd191a9ff6",
+            "GUID": "0fb8cb8e-c2c5-41db-8cfb-1de45b030a25",
+            "hackoladeStyles": {
+                "GUID": "4c77b4db-7e68-4ee5-a365-d729d8869529",
+                "autoPositioning": false,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 755,
+                        "y": 1485.1005299081132
+                    },
+                    {
+                        "x": 674,
+                        "y": 1485.1005299081132
+                    }
+                ],
+                "sides": [
+                    "left",
+                    "right"
+                ]
+            }
+        },
+        {
+            "name": "fk_Pacientes.cpf_to_Receitas.paciente.cpf",
+            "relationshipType": "Foreign Master",
+            "parentField": [
+                [
+                    "18bc2b43-2665-4366-b53d-600f140a86ae",
+                    "6d01b2cd-c927-4614-86b0-d48484b685a3"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "60ead818-5163-4de8-a07c-0ccd191a9ff6",
+                    "71bc653c-c2c9-4c37-a81a-604ee78d929d",
+                    "dbc2aa4a-a7ee-4b44-8669-dc878649103c"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "0..n",
+            "parentCollection": "18bc2b43-2665-4366-b53d-600f140a86ae",
+            "childCollection": "60ead818-5163-4de8-a07c-0ccd191a9ff6",
+            "GUID": "61ded7c1-5eb2-49a6-a9d8-a81fead3bbbe",
+            "hackoladeStyles": {
+                "GUID": "3d3aae28-4cca-49ed-9ca8-9c00fffd8883",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 755,
+                        "y": 1470.5
+                    },
+                    {
+                        "x": 714.5,
+                        "y": 1470.5
+                    },
+                    {
+                        "x": 714.5,
+                        "y": 1454
+                    },
+                    {
+                        "x": 674,
+                        "y": 1454
+                    }
+                ],
+                "sides": [
+                    "left",
+                    "right"
+                ]
+            }
+        },
+        {
+            "name": "fk_Pacientes.nome_to_Receitas.paciente.nome",
+            "relationshipType": "Foreign Master",
+            "parentField": [
+                [
+                    "18bc2b43-2665-4366-b53d-600f140a86ae",
+                    "e2fdf73c-c609-4e12-8741-c084a5b2289f"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "60ead818-5163-4de8-a07c-0ccd191a9ff6",
+                    "71bc653c-c2c9-4c37-a81a-604ee78d929d",
+                    "d76eef82-9571-43bd-843d-9823b10f69cf"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "0..n",
+            "parentCollection": "18bc2b43-2665-4366-b53d-600f140a86ae",
+            "childCollection": "60ead818-5163-4de8-a07c-0ccd191a9ff6",
+            "GUID": "d2f1bd4d-7ce7-4028-b31a-258f60745f65",
+            "hackoladeStyles": {
+                "GUID": "846cf2b8-f969-49c3-80b8-0ff4c1631fd1",
+                "autoPositioning": false,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 755,
+                        "y": 1485.1005299081132
+                    },
+                    {
+                        "x": 674,
+                        "y": 1485.1005299081132
+                    }
+                ],
+                "sides": [
+                    "left",
+                    "right"
+                ]
+            }
+        }
+    ],
+    "users": [],
+    "diagramViews": [],
+    "idToNameHashTable": {
+        "ff78d41a-0cf2-4d84-a68e-090c324a8af1": "New_Database",
+        "5b5a1ee7-a47c-4d92-abc0-4ae1e00e776f": "Medicos",
+        "8ede1e13-5c3e-459c-93c6-fd5d527f6b2a": "_id",
+        "5dca0592-ec12-4326-901f-51945eef4a69": "crm",
+        "f7fb00b6-ffe0-4130-9841-3596188e1e19": "nome",
+        "18bc2b43-2665-4366-b53d-600f140a86ae": "Pacientes",
+        "8ea01b76-4dfd-4cb6-b7f1-fedfe53bce74": "_id",
+        "6d01b2cd-c927-4614-86b0-d48484b685a3": "cpf",
+        "e2fdf73c-c609-4e12-8741-c084a5b2289f": "nome",
+        "a46c4a07-7d1d-4238-bdb3-d940a3ca20ca": "Medicamentos",
+        "d865f108-d3b6-41e5-ab41-ed3e993266dd": "nome",
+        "fb6811f0-9be8-41fc-81bf-8f1b2db2de06": "fabricante",
+        "60ead818-5163-4de8-a07c-0ccd191a9ff6": "Receitas",
+        "23188bb0-0628-4c57-92e5-37677e0d5026": "_id",
+        "3fa6ca77-518a-4039-8c9b-31a5e0c17da0": "emissao",
+        "6b66a44f-b3ff-448a-a2ea-6dc37a4e4d8e": "medico",
+        "9c1578c8-0f74-4c18-bba7-b5d548b5d204": "_id",
+        "37727ce7-b54e-4fa0-9a13-9ba46c8d1271": "especialidades",
+        "9f3a8586-8180-4b21-adad-1a93346d32a3": "telefones",
+        "91c7f1d2-bb3e-4a2f-876f-021efa52acd5": "nome",
+        "df7af85f-ac60-45c9-a02b-0f18e21a1e66": "cnpj",
+        "d594a6f7-cc1a-42ca-b609-d94f17b73f5b": "data_fabricacao",
+        "6dbbb232-c336-41cb-b2bb-76f4fde497f7": "bula",
+        "f52d4b33-5923-40ea-9a06-5d6b9c415885": "data_vencimento",
+        "66bae58a-a90a-4aad-9058-26c724e4fe96": "sexo",
+        "a5342c0a-6126-47dc-ae39-c160e26ee571": "nascimento",
+        "83b22bf1-96eb-498d-8175-6adcd3bc8f55": "endereco",
+        "8f50eee2-3ef4-4716-8eb8-3bb0612a51c7": "cep",
+        "68aab95b-602a-4b9a-8eb0-a73eb8821cfa": "logradouro",
+        "16cea4fb-9ae8-4b04-b7ac-c7609e687d65": "numero",
+        "2ba63f90-4996-4251-93bc-9e5aaf8f1d52": "_id",
+        "a32fb30b-fdb1-430b-80dd-03a3eeb0db61": "crm",
+        "b1bde7e4-d8a1-497b-a713-4586b1ef85ea": "nome",
+        "c9f60418-67cf-417a-856b-8043091a6022": "fk_Medicos._id_to_Receitas.medico._id",
+        "73a26fd5-7483-47dd-b44b-9df9517d7701": "fk_Medicos.crm_to_Receitas.medico.crm",
+        "7011be01-fe76-4672-8c75-f4e719811ce1": "fk_Medicos.nome_to_Receitas.medico.nome",
+        "71bc653c-c2c9-4c37-a81a-604ee78d929d": "paciente",
+        "b9d7724f-8c1f-4687-86f7-a26a41ddc5f5": "_id",
+        "dbc2aa4a-a7ee-4b44-8669-dc878649103c": "cpf",
+        "d76eef82-9571-43bd-843d-9823b10f69cf": "nome",
+        "0fb8cb8e-c2c5-41db-8cfb-1de45b030a25": "fk_Pacientes._id_to_Receitas.paciente._id",
+        "61ded7c1-5eb2-49a6-a9d8-a81fead3bbbe": "fk_Pacientes.cpf_to_Receitas.paciente.cpf",
+        "d2f1bd4d-7ce7-4028-b31a-258f60745f65": "fk_Pacientes.nome_to_Receitas.paciente.nome",
+        "455af3f1-2f04-4f27-930d-542d081a3148": "medicamentos",
+        "089cd80b-12ab-4859-bd38-e6ed365cbbee": "_id",
+        "f9dacc59-2f29-4060-a0cf-7e5aba37950c": "tipo_de_receita",
+        "b9f7c66b-61da-43f5-8182-c3399b7eecb8": "sexo"
+    },
+    "definitions": {
+        "type": "definitions",
+        "properties": [],
+        "GUID": "60d61424-3ac1-4aa7-974c-43e136c1d846"
+    },
+    "polyglotDefinitions": {
+        "type": "polyglotDefinitions",
+        "properties": [],
+        "GUID": "3142d908-6189-4d59-9fc4-5814f258eab7"
+    },
+    "externalDefinitions": {
+        "type": "externalDefinitions",
+        "properties": [],
+        "GUID": "86ca8f5e-aa85-47d8-9cf3-f54b94f4850e"
+    },
+    "sources": [],
+    "decorativeSymbols": [],
+    "dbVersion": "v7.x",
+    "dbVendor": "MongoDB",
+    "appTarget": "MONGODB",
+    "creationTS": "2024-08-28T23:17:36.043Z",
+    "GUID": "2cf2a06e-71e2-4e53-b22b-82f1c857d758",
+    "isLineageEnabled": false,
+    "lastModifTS": "2024-08-29T03:22:01.985Z",
+    "persistenceSchemaVersion": "7",
+    "isCreatedByPlugin": true,
+    "pluginInformation": {
+        "pluginEngineVersion": "1.0.0"
+    },
+    "applicationInformation": {
+        "version": "7.7.3"
+    },
+    "settings": {
+        "centralPane": {
+            "dbLevel": {
+                "erd": [
+                    {
+                        "GUID": "5b5a1ee7-a47c-4d92-abc0-4ae1e00e776f",
+                        "x": 781,
+                        "y": 1041.800048828125,
+                        "width": 269,
+                        "height": 188,
+                        "color": {}
+                    },
+                    {
+                        "GUID": "18bc2b43-2665-4366-b53d-600f140a86ae",
+                        "x": 366,
+                        "y": 1343,
+                        "width": 308,
+                        "height": 222,
+                        "color": {}
+                    },
+                    {
+                        "GUID": "a46c4a07-7d1d-4238-bdb3-d940a3ca20ca",
+                        "x": 1177,
+                        "y": 1294,
+                        "width": 247,
+                        "height": 177,
+                        "color": {}
+                    },
+                    {
+                        "GUID": "60ead818-5163-4de8-a07c-0ccd191a9ff6",
+                        "x": 755,
+                        "y": 1301,
+                        "width": 333,
+                        "height": 339,
+                        "color": {}
+                    }
+                ],
+                "erdDefinitions": {
+                    "erd": [],
+                    "rootPath": [],
+                    "entities": [],
+                    "decorativeSymbols": []
+                },
+                "buckets": [
+                    {
+                        "x": 326,
+                        "y": 1001.800048828125,
+                        "GUID": "ff78d41a-0cf2-4d84-a68e-090c324a8af1"
+                    }
+                ],
+                "collapsedNodes": [],
+                "activeRelationship": "",
+                "activeRelationshipFields": {
+                    "childField": [],
+                    "parentField": []
+                },
+                "selectedCollections": [],
+                "displayColorPicker": false,
+                "graphView": {
+                    "erd": [],
+                    "buckets": [],
+                    "decorativeSymbols": [],
+                    "forceLayout": true,
+                    "defaultLinkLength": 300
+                },
+                "diagramViews": [],
+                "decorativeSymbols": [],
+                "nestedCollectionsLayout": "horizontal",
+                "options": [
+                    {
+                        "autoWidth": false,
+                        "autoHeight": false,
+                        "GUID": "60ead818-5163-4de8-a07c-0ccd191a9ff6"
+                    },
+                    {
+                        "autoWidth": false,
+                        "autoHeight": false,
+                        "GUID": "5b5a1ee7-a47c-4d92-abc0-4ae1e00e776f"
+                    },
+                    {
+                        "autoWidth": false,
+                        "autoHeight": false,
+                        "GUID": "18bc2b43-2665-4366-b53d-600f140a86ae"
+                    }
+                ],
+                "relationshipUpdateDisabled": false
+            },
+            "collectionLevel": {},
+            "changed": false
+        },
+        "dtDiagram": {
+            "collapsedNodes": [],
+            "shouldDistributeCollections": false
+        }
+    }
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Unidade 1 - Exerício 1</title>
+    <script>
+      //ex 1
+      function calcularSoma(a, b, callback) {
+        var resultado = a + b;
+        callback(resultado);
+      }
+
+      function mostrarResultado(resultado) {
+        alert("O resultado é: " + resultado);
+      }
+
+      calcularSoma(5, 10, mostrarResultado);
+
+
+      //ex 2. Defina uma função que receba uma função e retorne uma nova função que executa a função original apenas um número limitado de vezes.
+      function criaExecutaN(n, callback) {
+        return function() {  
+          for (let i=0; i<n; i++) {
+            callback();
+          }
+        }
+      }
+
+      let func = criaExecutaN(4, calcularSoma(3, 2, mostrarResultado));
+      func();
+
+
+      //ex 3. Definir uma função de primeira classe que retorna outra função.
+      function calcularQuadrado(n) {
+        return mostrarResultado(n*n);
+      }
+      
+
+      //ex 4. Definir uma função de primeira classe que recebe um valor e retorna uma função que multiplica esse valor por um número específico.
+      const multiplica = (a, b) => a*b;
+      function multiplicaVezes5(n) {
+        return multiplica(n, 5);
+      }
+
+      
+      //ex 5. Definir uma função de primeira classe que recebe duas funções como parâmetro e retorna a soma dos resultados dessas funções.
+      function somarFuncs(fA, fB) {
+        return fA(...args) + fB(...args);
+      }
+      
+      //ex 6. Criar uma função chamada multiply que recebe dois números e um callback. A função deve multiplicar os dois números e passar o resultado para o callback.
+      function multiply(n1, n2, callback) {
+        return callback(n1 * n2);
+      }
+      
+      
+      //ex 7. Defina uma função anônima que receba um número como argumento e retorne o quadrado desse número.
+      const quadrado = function(n) {
+        return n * n;
+      }
+      
+      
+      //ex 8. Defina uma função anônima que seja passada como argumento para outra função.
+      multiply(3, 4, function(n) {
+        alert("resultado: " + n);
+      });
+      
+      
+      //ex 9. Defina uma função seta que receba um número como argumento e retorne o quadrado desse número.
+      quadrado = (n) => n * n;
+      
+      
+      //ex 10. Defina uma função seta que seja passada como argumento para outra função.
+      multiply(3, 4, (n) => {
+        alert("resultado: " + n);
+      });
+
+    </script>
+  </head>
+</html>

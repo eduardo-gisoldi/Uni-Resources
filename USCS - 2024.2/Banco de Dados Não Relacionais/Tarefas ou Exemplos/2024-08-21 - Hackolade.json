@@ -1,0 +1,1054 @@
+{
+    "modelName": "New Model",
+    "collections": [
+        {
+            "collectionName": "Compras",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "_id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "objectId",
+                    "GUID": "383bc972-5504-471a-8a16-3d206b551fe5",
+                    "required": true,
+                    "primaryKey": true,
+                    "error": {},
+                    "childRelationships": [
+                        "f5546e62-ac0e-4f47-a616-3d2db14baa50"
+                    ]
+                },
+                {
+                    "name": "data_compra",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "date",
+                    "primaryKey": false,
+                    "GUID": "95fd2aee-2df2-4b5a-9361-235b91fc182e",
+                    "required": true,
+                    "error": {},
+                    "childRelationships": [
+                        "ca891265-794c-4186-9c60-d8e9c0db94e3"
+                    ]
+                },
+                {
+                    "name": "items",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "array",
+                    "properties": [
+                        {
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "document",
+                            "properties": [
+                                {
+                                    "name": "_idServico",
+                                    "hackoladeMeta": {},
+                                    "isActivated": true,
+                                    "type": "objectId",
+                                    "GUID": "0014c89a-d360-4bee-88ca-5e87e4c736aa",
+                                    "error": {},
+                                    "relationshipType": "Foreign Key",
+                                    "foreignCollection": "caf0b4f3-9da2-4f32-be66-a191a2eb7bff",
+                                    "foreignField": [
+                                        "caf0b4f3-9da2-4f32-be66-a191a2eb7bff",
+                                        "fbfc2103-ecba-4147-b638-472d6b8169ad"
+                                    ],
+                                    "parentRelationship": "de67a900-1d15-4669-9e3c-df11cb829c86"
+                                },
+                                {
+                                    "name": "descricao",
+                                    "hackoladeMeta": {},
+                                    "isActivated": true,
+                                    "type": "string",
+                                    "GUID": "5b761bf0-fa02-46d3-b6d9-542f0807a86d",
+                                    "relationshipType": "Foreign Master",
+                                    "foreignCollection": "caf0b4f3-9da2-4f32-be66-a191a2eb7bff",
+                                    "foreignField": [
+                                        "caf0b4f3-9da2-4f32-be66-a191a2eb7bff",
+                                        "d99c1c47-ea01-461e-83c5-cf274450d7ad"
+                                    ],
+                                    "parentRelationship": "4e2dcd16-441b-4288-b240-673bc3fa60ad",
+                                    "error": {}
+                                },
+                                {
+                                    "name": "valor_unit",
+                                    "hackoladeMeta": {},
+                                    "isActivated": true,
+                                    "type": "numeric",
+                                    "GUID": "e0a82281-2aad-40f6-868b-6c4bca50b8b7",
+                                    "error": {}
+                                },
+                                {
+                                    "name": "quant",
+                                    "hackoladeMeta": {},
+                                    "isActivated": true,
+                                    "type": "numeric",
+                                    "GUID": "a5273faa-08bb-4c03-a077-06c20ae7e368",
+                                    "error": {}
+                                },
+                                {
+                                    "name": "valor_total_item",
+                                    "hackoladeMeta": {},
+                                    "isActivated": true,
+                                    "type": "numeric",
+                                    "GUID": "073e4a46-77f6-4083-b18d-263d437645f4",
+                                    "error": {}
+                                }
+                            ],
+                            "additionalProperties": false,
+                            "error": {},
+                            "GUID": "726d3caf-883a-4579-9afe-b69033850d02",
+                            "arrayItem": true
+                        }
+                    ],
+                    "additionalItems": true,
+                    "GUID": "8d01c7cc-e363-442d-ae9e-cc61a290ae1c",
+                    "error": {}
+                },
+                {
+                    "name": "valor_total",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "numeric",
+                    "GUID": "11566a56-a7ab-498d-9cdb-238fddcdc279",
+                    "error": {},
+                    "childRelationships": [
+                        "4b7e61a9-6977-4a0f-810a-49970eb22844"
+                    ]
+                },
+                {
+                    "name": "cliente",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "document",
+                    "properties": [
+                        {
+                            "name": "_idCliente",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "objectId",
+                            "GUID": "6c9db113-62a1-4b32-b012-01e6ecfdd4ee",
+                            "error": {},
+                            "relationshipType": "Foreign Key",
+                            "foreignCollection": "5475c9b0-73b8-46f9-a6c9-ed228e35500c",
+                            "foreignField": [
+                                "5475c9b0-73b8-46f9-a6c9-ed228e35500c",
+                                "11f46479-9ac9-4354-96b8-000a21f46a70"
+                            ],
+                            "parentRelationship": "d987c31a-b52c-4c8e-b40a-023c6fd683ed"
+                        },
+                        {
+                            "name": "nome",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "b1088f6e-88e4-481b-84f4-f5885729183a",
+                            "relationshipType": "Foreign Master",
+                            "foreignCollection": "5475c9b0-73b8-46f9-a6c9-ed228e35500c",
+                            "foreignField": [
+                                "5475c9b0-73b8-46f9-a6c9-ed228e35500c",
+                                "667c7421-3ee6-4d0c-bb0a-69d65e7ab01e"
+                            ],
+                            "parentRelationship": "e8809378-7237-469c-9ffa-83e7a79259ee",
+                            "error": {}
+                        },
+                        {
+                            "name": "cpf",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "002b443e-ffce-4c24-bb84-cbdde32e0260",
+                            "relationshipType": "Foreign Master",
+                            "foreignCollection": "5475c9b0-73b8-46f9-a6c9-ed228e35500c",
+                            "foreignField": [
+                                "5475c9b0-73b8-46f9-a6c9-ed228e35500c",
+                                "cb5da274-6f7b-4489-8107-ed8addda3137"
+                            ],
+                            "parentRelationship": "886c9d15-6ad3-4ab4-ad3a-54b4ee8e2487",
+                            "error": {}
+                        }
+                    ],
+                    "additionalProperties": false,
+                    "GUID": "c90f572c-a5aa-41d2-bf05-e77a867510d9",
+                    "error": {}
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "0de722d9-fc69-47f9-961e-38dcce954442"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "validationLevel": "Off",
+            "validationAction": "Warn",
+            "storageEngineName": "WiredTiger",
+            "collectionUsers": [],
+            "indexes": [],
+            "collation": {},
+            "sharding": {
+                "unique": true,
+                "collation": "null"
+            },
+            "GUID": "308c8e2d-617b-474c-b105-4eaef98fecea",
+            "bucketId": "e4f75190-f40d-4ff7-bc98-2decb46136ff"
+        },
+        {
+            "collectionName": "Clientes",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "_id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "objectId",
+                    "GUID": "11f46479-9ac9-4354-96b8-000a21f46a70",
+                    "required": true,
+                    "primaryKey": true,
+                    "error": {},
+                    "childRelationships": [
+                        "d987c31a-b52c-4c8e-b40a-023c6fd683ed"
+                    ]
+                },
+                {
+                    "name": "nome",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "667c7421-3ee6-4d0c-bb0a-69d65e7ab01e",
+                    "error": {},
+                    "childRelationships": [
+                        "e8809378-7237-469c-9ffa-83e7a79259ee"
+                    ]
+                },
+                {
+                    "name": "nome_mae",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "a139ad48-ad31-4b4f-b5a4-41a5a25ea591",
+                    "error": {}
+                },
+                {
+                    "name": "cpf",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "cb5da274-6f7b-4489-8107-ed8addda3137",
+                    "error": {},
+                    "childRelationships": [
+                        "886c9d15-6ad3-4ab4-ad3a-54b4ee8e2487"
+                    ]
+                },
+                {
+                    "name": "vendas",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "array",
+                    "properties": [
+                        {
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "document",
+                            "properties": [
+                                {
+                                    "name": "_idVenda",
+                                    "hackoladeMeta": {},
+                                    "isActivated": true,
+                                    "type": "objectId",
+                                    "GUID": "e58c02e7-4517-40b5-b220-7e46d634837b",
+                                    "error": {},
+                                    "relationshipType": "Foreign Key",
+                                    "foreignCollection": "308c8e2d-617b-474c-b105-4eaef98fecea",
+                                    "foreignField": [
+                                        "308c8e2d-617b-474c-b105-4eaef98fecea",
+                                        "383bc972-5504-471a-8a16-3d206b551fe5"
+                                    ],
+                                    "parentRelationship": "f5546e62-ac0e-4f47-a616-3d2db14baa50"
+                                },
+                                {
+                                    "name": "data_venda",
+                                    "hackoladeMeta": {},
+                                    "isActivated": true,
+                                    "type": "date",
+                                    "primaryKey": false,
+                                    "GUID": "64a1e571-b215-4794-b172-77dfce81f36b",
+                                    "relationshipType": "Foreign Master",
+                                    "foreignCollection": "308c8e2d-617b-474c-b105-4eaef98fecea",
+                                    "foreignField": [
+                                        "308c8e2d-617b-474c-b105-4eaef98fecea",
+                                        "95fd2aee-2df2-4b5a-9361-235b91fc182e"
+                                    ],
+                                    "parentRelationship": "ca891265-794c-4186-9c60-d8e9c0db94e3",
+                                    "error": {}
+                                },
+                                {
+                                    "name": "valor_total",
+                                    "hackoladeMeta": {},
+                                    "isActivated": true,
+                                    "type": "numeric",
+                                    "GUID": "91c031c7-0947-41d7-844a-6a84553c711b",
+                                    "relationshipType": "Foreign Master",
+                                    "foreignCollection": "308c8e2d-617b-474c-b105-4eaef98fecea",
+                                    "foreignField": [
+                                        "308c8e2d-617b-474c-b105-4eaef98fecea",
+                                        "11566a56-a7ab-498d-9cdb-238fddcdc279"
+                                    ],
+                                    "parentRelationship": "4b7e61a9-6977-4a0f-810a-49970eb22844",
+                                    "error": {}
+                                }
+                            ],
+                            "additionalProperties": false,
+                            "error": {},
+                            "GUID": "7c302f2e-b1b0-489f-b98f-d5ea3a35ef04",
+                            "arrayItem": true
+                        }
+                    ],
+                    "additionalItems": true,
+                    "GUID": "9b4d0882-3fe7-4ac4-b94b-75da6d0599e6",
+                    "error": {}
+                },
+                {
+                    "name": "emails",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "array",
+                    "properties": [
+                        {
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "c25ce9b4-6b80-4f38-8fbf-4b88caa39ee1",
+                            "arrayItem": true
+                        }
+                    ],
+                    "additionalItems": true,
+                    "GUID": "36273af9-c9e6-419a-b338-eedb672b3314",
+                    "error": {}
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "480a619e-af79-41d7-8677-e7a9b78cb812"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "validationLevel": "Off",
+            "validationAction": "Warn",
+            "storageEngineName": "WiredTiger",
+            "collectionUsers": [],
+            "indexes": [],
+            "collation": {},
+            "sharding": {
+                "unique": true,
+                "collation": "null"
+            },
+            "GUID": "5475c9b0-73b8-46f9-a6c9-ed228e35500c",
+            "bucketId": "e4f75190-f40d-4ff7-bc98-2decb46136ff"
+        },
+        {
+            "collectionName": "Servicos",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "_id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "objectId",
+                    "GUID": "fbfc2103-ecba-4147-b638-472d6b8169ad",
+                    "required": true,
+                    "primaryKey": true,
+                    "error": {},
+                    "childRelationships": [
+                        "de67a900-1d15-4669-9e3c-df11cb829c86"
+                    ]
+                },
+                {
+                    "name": "descricao",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "d99c1c47-ea01-461e-83c5-cf274450d7ad",
+                    "required": true,
+                    "error": {},
+                    "childRelationships": [
+                        "4e2dcd16-441b-4288-b240-673bc3fa60ad"
+                    ]
+                },
+                {
+                    "name": "valor_unit",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "numeric",
+                    "GUID": "32de8b59-f960-46ea-bad2-d68340ea79aa",
+                    "error": {}
+                },
+                {
+                    "name": "detalhamento",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "9b3c6d2d-68fc-4854-9840-2c5c8daf6214",
+                    "error": {}
+                },
+                {
+                    "name": "criado_por",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "be3de4ba-b535-42f5-acee-a3308b293de5",
+                    "error": {}
+                },
+                {
+                    "name": "criado_em",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "date",
+                    "primaryKey": false,
+                    "GUID": "80a4c728-e1be-4d0c-9cc5-f226b105206b",
+                    "error": {}
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "0a47af2d-3e7d-4c50-a7be-31b3ca0d70f1"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "validationLevel": "Off",
+            "validationAction": "Warn",
+            "storageEngineName": "WiredTiger",
+            "collectionUsers": [],
+            "indexes": [],
+            "collation": {},
+            "sharding": {
+                "unique": true,
+                "collation": "null"
+            },
+            "GUID": "caf0b4f3-9da2-4f32-be66-a191a2eb7bff",
+            "bucketId": "e4f75190-f40d-4ff7-bc98-2decb46136ff"
+        }
+    ],
+    "buckets": [
+        {
+            "name": "New_Database",
+            "type": "bucket",
+            "collectionIds": [
+                "308c8e2d-617b-474c-b105-4eaef98fecea",
+                "5475c9b0-73b8-46f9-a6c9-ed228e35500c",
+                "caf0b4f3-9da2-4f32-be66-a191a2eb7bff"
+            ],
+            "backgroundColor": {
+                "r": 216,
+                "g": 0,
+                "b": 115,
+                "a": 1
+            },
+            "show": true,
+            "isActivated": true,
+            "GUID": "e4f75190-f40d-4ff7-bc98-2decb46136ff"
+        }
+    ],
+    "views": [],
+    "relationships": [
+        {
+            "name": "fk Compras.items.[0]._idServico to Servicos._id",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "caf0b4f3-9da2-4f32-be66-a191a2eb7bff",
+                    "fbfc2103-ecba-4147-b638-472d6b8169ad"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "308c8e2d-617b-474c-b105-4eaef98fecea",
+                    "8d01c7cc-e363-442d-ae9e-cc61a290ae1c",
+                    "726d3caf-883a-4579-9afe-b69033850d02",
+                    "0014c89a-d360-4bee-88ca-5e87e4c736aa"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "0..n",
+            "parentCollection": "caf0b4f3-9da2-4f32-be66-a191a2eb7bff",
+            "childCollection": "308c8e2d-617b-474c-b105-4eaef98fecea",
+            "GUID": "de67a900-1d15-4669-9e3c-df11cb829c86",
+            "hackoladeStyles": {
+                "GUID": "5be56c43-e99c-47fc-a39d-088d4599be7b",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 1723.1047619047597,
+                        "y": 1441.9999999999993
+                    },
+                    {
+                        "x": 1723.1047619047597,
+                        "y": 1509.8809523809523
+                    },
+                    {
+                        "x": 1908.6428571428576,
+                        "y": 1509.8809523809523
+                    },
+                    {
+                        "x": 1908.6428571428576,
+                        "y": 1577.7619047619053
+                    }
+                ],
+                "sides": [
+                    "bottom",
+                    "top"
+                ]
+            }
+        },
+        {
+            "name": "fk Compras.items.[0].descricao to Servicos.descricao",
+            "relationshipType": "Foreign Master",
+            "parentField": [
+                [
+                    "caf0b4f3-9da2-4f32-be66-a191a2eb7bff",
+                    "d99c1c47-ea01-461e-83c5-cf274450d7ad"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "308c8e2d-617b-474c-b105-4eaef98fecea",
+                    "8d01c7cc-e363-442d-ae9e-cc61a290ae1c",
+                    "726d3caf-883a-4579-9afe-b69033850d02",
+                    "5b761bf0-fa02-46d3-b6d9-542f0807a86d"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "0..n",
+            "parentCollection": "caf0b4f3-9da2-4f32-be66-a191a2eb7bff",
+            "childCollection": "308c8e2d-617b-474c-b105-4eaef98fecea",
+            "GUID": "4e2dcd16-441b-4288-b240-673bc3fa60ad",
+            "hackoladeStyles": {
+                "GUID": "7d5a5553-e468-4507-8695-81d979ae0ad1",
+                "autoPositioning": false,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 1817.9047619047597,
+                        "y": 1302.933397051017
+                    },
+                    {
+                        "x": 2285.6190476190504,
+                        "y": 1302.933397051017
+                    },
+                    {
+                        "x": 2285.6190476190504,
+                        "y": 1633.7619047619053
+                    },
+                    {
+                        "x": 2024.1428571428576,
+                        "y": 1633.7619047619053
+                    }
+                ],
+                "sides": [
+                    "right",
+                    "right"
+                ]
+            }
+        },
+        {
+            "name": "fk Compras.cliente._idCliente to Clientes._id",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "5475c9b0-73b8-46f9-a6c9-ed228e35500c",
+                    "11f46479-9ac9-4354-96b8-000a21f46a70"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "308c8e2d-617b-474c-b105-4eaef98fecea",
+                    "c90f572c-a5aa-41d2-bf05-e77a867510d9",
+                    "6c9db113-62a1-4b32-b012-01e6ecfdd4ee"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "0..n",
+            "parentCollection": "5475c9b0-73b8-46f9-a6c9-ed228e35500c",
+            "childCollection": "308c8e2d-617b-474c-b105-4eaef98fecea",
+            "GUID": "d987c31a-b52c-4c8e-b40a-023c6fd683ed",
+            "hackoladeStyles": {
+                "GUID": "5fa18d6e-8c09-4854-ae8e-98436bf022d4",
+                "autoPositioning": false,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 1358.9047619047597,
+                        "y": 1441.9999999999993
+                    },
+                    {
+                        "y": 1457.6666666666658,
+                        "x": 1358.9047619047597
+                    },
+                    {
+                        "y": 1457.6666666666658,
+                        "x": 1400.0762647670688
+                    },
+                    {
+                        "x": 1400.0762647670688,
+                        "y": 1517.666666666668
+                    }
+                ],
+                "sides": [
+                    "bottom",
+                    "top"
+                ]
+            }
+        },
+        {
+            "name": "fk Compras.cliente.nome to Clientes.nome",
+            "relationshipType": "Foreign Master",
+            "parentField": [
+                [
+                    "5475c9b0-73b8-46f9-a6c9-ed228e35500c",
+                    "667c7421-3ee6-4d0c-bb0a-69d65e7ab01e"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "308c8e2d-617b-474c-b105-4eaef98fecea",
+                    "c90f572c-a5aa-41d2-bf05-e77a867510d9",
+                    "b1088f6e-88e4-481b-84f4-f5885729183a"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "0..n",
+            "parentCollection": "5475c9b0-73b8-46f9-a6c9-ed228e35500c",
+            "childCollection": "308c8e2d-617b-474c-b105-4eaef98fecea",
+            "GUID": "e8809378-7237-469c-9ffa-83e7a79259ee",
+            "hackoladeStyles": {
+                "GUID": "0cb6ea3a-2976-4302-8c9b-dd292ed3542e",
+                "autoPositioning": false,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 1343.9047619047597,
+                        "y": 1426.9999999999993
+                    },
+                    {
+                        "x": 1332.2380952380931,
+                        "y": 1426.9999999999993
+                    },
+                    {
+                        "x": 1332.2380952380931,
+                        "y": 1635.4013140265968
+                    },
+                    {
+                        "x": 1367.6190476190457,
+                        "y": 1635.4013140265968
+                    }
+                ],
+                "sides": [
+                    "left",
+                    "left"
+                ]
+            }
+        },
+        {
+            "name": "fk Compras.cliente.cpf to Clientes.cpf",
+            "relationshipType": "Foreign Master",
+            "parentField": [
+                [
+                    "5475c9b0-73b8-46f9-a6c9-ed228e35500c",
+                    "cb5da274-6f7b-4489-8107-ed8addda3137"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "308c8e2d-617b-474c-b105-4eaef98fecea",
+                    "c90f572c-a5aa-41d2-bf05-e77a867510d9",
+                    "002b443e-ffce-4c24-bb84-cbdde32e0260"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "0..n",
+            "parentCollection": "5475c9b0-73b8-46f9-a6c9-ed228e35500c",
+            "childCollection": "308c8e2d-617b-474c-b105-4eaef98fecea",
+            "GUID": "886c9d15-6ad3-4ab4-ad3a-54b4ee8e2487",
+            "hackoladeStyles": {
+                "GUID": "b6e93845-9195-4617-bf95-12724c637340",
+                "autoPositioning": false,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 1343.9047619047597,
+                        "y": 1426.9999999999993
+                    },
+                    {
+                        "x": 1315.5714285714264,
+                        "y": 1426.9999999999993
+                    },
+                    {
+                        "x": 1315.5714285714264,
+                        "y": 1635.4013140265968
+                    },
+                    {
+                        "x": 1367.6190476190457,
+                        "y": 1635.4013140265968
+                    }
+                ],
+                "sides": [
+                    "left",
+                    "left"
+                ]
+            }
+        },
+        {
+            "name": "fk Clientes.vendas.[0]._idVenda to Compras._id",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "308c8e2d-617b-474c-b105-4eaef98fecea",
+                    "383bc972-5504-471a-8a16-3d206b551fe5"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "5475c9b0-73b8-46f9-a6c9-ed228e35500c",
+                    "9b4d0882-3fe7-4ac4-b94b-75da6d0599e6",
+                    "7c302f2e-b1b0-489f-b98f-d5ea3a35ef04",
+                    "e58c02e7-4517-40b5-b220-7e46d634837b"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "0..n",
+            "parentCollection": "308c8e2d-617b-474c-b105-4eaef98fecea",
+            "childCollection": "5475c9b0-73b8-46f9-a6c9-ed228e35500c",
+            "GUID": "f5546e62-ac0e-4f47-a616-3d2db14baa50",
+            "hackoladeStyles": {
+                "GUID": "14c64eb0-2439-4e1a-b753-681a40b12592",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 1564.8690476190457,
+                        "y": 1517.666666666668
+                    },
+                    {
+                        "x": 1564.8690476190457,
+                        "y": 1479.8333333333337
+                    },
+                    {
+                        "x": 1628.3047619047597,
+                        "y": 1479.8333333333337
+                    },
+                    {
+                        "x": 1628.3047619047597,
+                        "y": 1441.9999999999993
+                    }
+                ],
+                "sides": [
+                    "top",
+                    "bottom"
+                ]
+            }
+        },
+        {
+            "name": "fk Clientes.vendas.[0].data_venda to Compras.data_compra",
+            "relationshipType": "Foreign Master",
+            "parentField": [
+                [
+                    "308c8e2d-617b-474c-b105-4eaef98fecea",
+                    "95fd2aee-2df2-4b5a-9361-235b91fc182e"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "5475c9b0-73b8-46f9-a6c9-ed228e35500c",
+                    "9b4d0882-3fe7-4ac4-b94b-75da6d0599e6",
+                    "7c302f2e-b1b0-489f-b98f-d5ea3a35ef04",
+                    "64a1e571-b215-4794-b172-77dfce81f36b"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "0..n",
+            "parentCollection": "308c8e2d-617b-474c-b105-4eaef98fecea",
+            "childCollection": "5475c9b0-73b8-46f9-a6c9-ed228e35500c",
+            "GUID": "ca891265-794c-4186-9c60-d8e9c0db94e3",
+            "hackoladeStyles": {
+                "GUID": "6f242c4b-c9d6-435b-85e9-78e26dd8673d",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 1499.1190476190457,
+                        "y": 1517.666666666668
+                    },
+                    {
+                        "x": 1499.1190476190457,
+                        "y": 1479.8333333333337
+                    },
+                    {
+                        "x": 1533.5047619047596,
+                        "y": 1479.8333333333337
+                    },
+                    {
+                        "x": 1533.5047619047596,
+                        "y": 1441.9999999999993
+                    }
+                ],
+                "sides": [
+                    "top",
+                    "bottom"
+                ]
+            }
+        },
+        {
+            "name": "fk Clientes.vendas.[0].valor_total to Compras.valor_total",
+            "relationshipType": "Foreign Master",
+            "parentField": [
+                [
+                    "308c8e2d-617b-474c-b105-4eaef98fecea",
+                    "11566a56-a7ab-498d-9cdb-238fddcdc279"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "5475c9b0-73b8-46f9-a6c9-ed228e35500c",
+                    "9b4d0882-3fe7-4ac4-b94b-75da6d0599e6",
+                    "7c302f2e-b1b0-489f-b98f-d5ea3a35ef04",
+                    "91c031c7-0947-41d7-844a-6a84553c711b"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "0..n",
+            "parentCollection": "308c8e2d-617b-474c-b105-4eaef98fecea",
+            "childCollection": "5475c9b0-73b8-46f9-a6c9-ed228e35500c",
+            "GUID": "4b7e61a9-6977-4a0f-810a-49970eb22844",
+            "hackoladeStyles": {
+                "GUID": "5d3b2e6a-2156-41ab-a7b8-23ebf285c492",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 1433.3690476190457,
+                        "y": 1517.666666666668
+                    },
+                    {
+                        "x": 1433.3690476190457,
+                        "y": 1479.8333333333337
+                    },
+                    {
+                        "x": 1438.7047619047596,
+                        "y": 1479.8333333333337
+                    },
+                    {
+                        "x": 1438.7047619047596,
+                        "y": 1441.9999999999993
+                    }
+                ],
+                "sides": [
+                    "top",
+                    "bottom"
+                ]
+            }
+        }
+    ],
+    "users": [],
+    "diagramViews": [],
+    "idToNameHashTable": {
+        "e4f75190-f40d-4ff7-bc98-2decb46136ff": "New_Database",
+        "308c8e2d-617b-474c-b105-4eaef98fecea": "Compras",
+        "5475c9b0-73b8-46f9-a6c9-ed228e35500c": "Clientes",
+        "caf0b4f3-9da2-4f32-be66-a191a2eb7bff": "Servicos",
+        "383bc972-5504-471a-8a16-3d206b551fe5": "_id",
+        "11f46479-9ac9-4354-96b8-000a21f46a70": "_id",
+        "fbfc2103-ecba-4147-b638-472d6b8169ad": "_id",
+        "d99c1c47-ea01-461e-83c5-cf274450d7ad": "descricao",
+        "32de8b59-f960-46ea-bad2-d68340ea79aa": "valor_unit",
+        "9b3c6d2d-68fc-4854-9840-2c5c8daf6214": "detalhamento",
+        "be3de4ba-b535-42f5-acee-a3308b293de5": "criado_por",
+        "80a4c728-e1be-4d0c-9cc5-f226b105206b": "criado_em",
+        "95fd2aee-2df2-4b5a-9361-235b91fc182e": "data_compra",
+        "8d01c7cc-e363-442d-ae9e-cc61a290ae1c": "items",
+        "0014c89a-d360-4bee-88ca-5e87e4c736aa": "_idServico",
+        "de67a900-1d15-4669-9e3c-df11cb829c86": "fk Compras.items.[0]._idServico to Servicos._id",
+        "5b761bf0-fa02-46d3-b6d9-542f0807a86d": "descricao",
+        "4e2dcd16-441b-4288-b240-673bc3fa60ad": "fk Compras.items.[0].descricao to Servicos.descricao",
+        "e0a82281-2aad-40f6-868b-6c4bca50b8b7": "valor_unit",
+        "a5273faa-08bb-4c03-a077-06c20ae7e368": "quant",
+        "073e4a46-77f6-4083-b18d-263d437645f4": "valor_total_item",
+        "11566a56-a7ab-498d-9cdb-238fddcdc279": "valor_total",
+        "667c7421-3ee6-4d0c-bb0a-69d65e7ab01e": "nome",
+        "a139ad48-ad31-4b4f-b5a4-41a5a25ea591": "nome_mae",
+        "c90f572c-a5aa-41d2-bf05-e77a867510d9": "cliente",
+        "6c9db113-62a1-4b32-b012-01e6ecfdd4ee": "_idCliente",
+        "b1088f6e-88e4-481b-84f4-f5885729183a": "nome",
+        "d987c31a-b52c-4c8e-b40a-023c6fd683ed": "fk Compras.cliente._idCliente to Clientes._id",
+        "e8809378-7237-469c-9ffa-83e7a79259ee": "fk Compras.cliente.nome to Clientes.nome",
+        "cb5da274-6f7b-4489-8107-ed8addda3137": "cpf",
+        "002b443e-ffce-4c24-bb84-cbdde32e0260": "cpf",
+        "886c9d15-6ad3-4ab4-ad3a-54b4ee8e2487": "fk Compras.cliente.cpf to Clientes.cpf",
+        "9b4d0882-3fe7-4ac4-b94b-75da6d0599e6": "vendas",
+        "e58c02e7-4517-40b5-b220-7e46d634837b": "_idVenda",
+        "64a1e571-b215-4794-b172-77dfce81f36b": "data_venda",
+        "91c031c7-0947-41d7-844a-6a84553c711b": "valor_total",
+        "f5546e62-ac0e-4f47-a616-3d2db14baa50": "fk Clientes.vendas.[0]._idVenda to Compras._id",
+        "ca891265-794c-4186-9c60-d8e9c0db94e3": "fk Clientes.vendas.[0].data_venda to Compras.data_compra",
+        "4b7e61a9-6977-4a0f-810a-49970eb22844": "fk Clientes.vendas.[0].valor_total to Compras.valor_total",
+        "36273af9-c9e6-419a-b338-eedb672b3314": "emails"
+    },
+    "definitions": {
+        "type": "definitions",
+        "properties": [],
+        "GUID": "f9deb8cd-39e5-45a9-83c3-b0e463b6da22"
+    },
+    "polyglotDefinitions": {
+        "type": "polyglotDefinitions",
+        "properties": [],
+        "GUID": "67fbf95f-a924-4009-becb-cd68575bca5e"
+    },
+    "externalDefinitions": {
+        "type": "externalDefinitions",
+        "properties": [],
+        "GUID": "0bbe48d1-3a71-4ed5-ab80-28b864da832c"
+    },
+    "sources": [],
+    "decorativeSymbols": [],
+    "dbVersion": "v7.x",
+    "dbVendor": "MongoDB",
+    "appTarget": "MONGODB",
+    "creationTS": "2024-08-21T23:08:03.328Z",
+    "GUID": "e87a5f78-0cd6-4f11-b800-dbe667bd98da",
+    "isLineageEnabled": false,
+    "lastModifTS": "2024-08-21T23:54:24.374Z",
+    "persistenceSchemaVersion": "7",
+    "isCreatedByPlugin": true,
+    "pluginInformation": {
+        "pluginEngineVersion": "1.0.0"
+    },
+    "applicationInformation": {
+        "version": "7.2.3"
+    },
+    "settings": {
+        "centralPane": {
+            "dbLevel": {
+                "erd": [
+                    {
+                        "GUID": "308c8e2d-617b-474c-b105-4eaef98fecea",
+                        "x": 1343.9047619047597,
+                        "y": 1206.9999999999993,
+                        "width": 474,
+                        "height": 235,
+                        "color": {}
+                    },
+                    {
+                        "GUID": "5475c9b0-73b8-46f9-a6c9-ed228e35500c",
+                        "x": 1367.6190476190457,
+                        "y": 1517.666666666668,
+                        "width": 263,
+                        "height": 238,
+                        "color": {}
+                    },
+                    {
+                        "GUID": "caf0b4f3-9da2-4f32-be66-a191a2eb7bff",
+                        "x": 1793.1428571428576,
+                        "y": 1577.7619047619053,
+                        "width": 231,
+                        "height": 168,
+                        "color": {}
+                    }
+                ],
+                "erdDefinitions": {
+                    "erd": [],
+                    "rootPath": [],
+                    "entities": [],
+                    "decorativeSymbols": []
+                },
+                "buckets": [
+                    {
+                        "x": 1275.5714285714264,
+                        "y": 1166.9999999999993,
+                        "GUID": "e4f75190-f40d-4ff7-bc98-2decb46136ff"
+                    }
+                ],
+                "collapsedNodes": [
+                    "308c8e2d-617b-474c-b105-4eaef98fecea8d01c7cc-e363-442d-ae9e-cc61a290ae1c",
+                    "308c8e2d-617b-474c-b105-4eaef98feceac90f572c-a5aa-41d2-bf05-e77a867510d9"
+                ],
+                "activeRelationship": "",
+                "activeRelationshipFields": {
+                    "childField": [],
+                    "parentField": []
+                },
+                "selectedCollections": [],
+                "displayColorPicker": false,
+                "graphView": {
+                    "erd": [],
+                    "buckets": [],
+                    "decorativeSymbols": [],
+                    "forceLayout": true,
+                    "defaultLinkLength": 300
+                },
+                "diagramViews": [],
+                "decorativeSymbols": [],
+                "nestedCollectionsLayout": "horizontal",
+                "options": [
+                    {
+                        "autoWidth": false,
+                        "autoHeight": false,
+                        "GUID": "caf0b4f3-9da2-4f32-be66-a191a2eb7bff"
+                    },
+                    {
+                        "autoWidth": false,
+                        "autoHeight": false,
+                        "GUID": "5475c9b0-73b8-46f9-a6c9-ed228e35500c"
+                    },
+                    {
+                        "autoWidth": false,
+                        "autoHeight": false,
+                        "GUID": "308c8e2d-617b-474c-b105-4eaef98fecea"
+                    }
+                ],
+                "relationshipUpdateDisabled": false
+            },
+            "collectionLevel": {},
+            "changed": false
+        },
+        "dtDiagram": {
+            "collapsedNodes": [],
+            "shouldDistributeCollections": false
+        }
+    }
+}

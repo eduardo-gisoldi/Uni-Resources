@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercicios Unidade 4</title>
+    <style>
+      h1 {
+          color: blue;
+          text-align: center;
+      }
+      table {
+          width: 100%;
+          border-collapse: collapse;
+          margin-top: 20px;
+      }
+      th, td {
+          padding: 10px;
+          border: 1px solid #ddd;
+          text-align: center;
+      }
+      th {
+          background-color: #f4f4f4;
+      }
+  </style>
+  </head>
+<body>
+  <h1 id="titulo" style="color: blue;">Título</h1>
+
+  <button id="botao">Alterar cor</button>
+
+  <h2>Gerenciar Contatos</h2>
+  <form id="formContato">
+      <input type="text" id="nome" placeholder="Nome">
+      <input type="email" id="email" placeholder="Email">
+      <input type="text" id="telefone" placeholder="Telefone">
+      <input type="hidden" id="index" value="">
+      <button type="submit">Adicionar/Alterar Contato</button>
+  </form>
+
+  <table id="tabelaContatos">
+      <thead>
+          <tr>
+              <th>Nome</th>
+              <th>Email</th>
+              <th>Telefone</th>
+              <th>Ações</th>
+          </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    
+  <div class="relogio">
+    Hora Atual: <span id="relogio"></span>
+  </div>
+  
+  <form id="calculadora">
+    <input type="number" id="numero1" placeholder="Insira o primeiro número" required>
+    <select id="operacao">
+        <option value="adicao">Adição (+)</option>
+        <option value="subtracao">Subtração (-)</option>
+        <option value="multiplicacao">Multiplicação (×)</option>
+        <option value="divisao">Divisão (÷)</option>
+    </select>
+    <input type="number" id="numero2" placeholder="Insira o segundo número" required>
+    <button type="submit">Calcular</button>
+  </form>
+  <div class="resultado" id="resultado"></div>
+
+  <script> 
+    //ex 1
+    const titulo = document.getElementById("titulo");
+    const botao = document.getElementById("botao");
+
+    botao.addEventListener("click", () => {
+      if (titulo.style.color == "blue") titulo.style.color = "red"; 
+      else if (titulo.style.color == "red") titulo.style.color = "blue";
+    });
+
+
+    //ex 2
+        let contatos = [];
+
+        const tabelaContatos = document.getElementById('tabelaContatos').getElementsByTagName('tbody')[0];
+        const formContato = document.getElementById('formContato');
+        const nomeInput = document.getElementById('nome');
+        const emailInput = document.getElementById('email');
+        const telefoneInput = document.getElementById('telefone');
+        const indexInput = document.getElementById('index');
+
+        function renderTabela() {
+            tabelaContatos.innerHTML = ''; // Limpa a tabela
+            contatos.forEach((contato, index) => {
+                let row = tabelaContatos.insertRow();
+                row.insertCell(0).innerText = contato.nome;
+                row.insertCell(1).innerText = contato.email;
+                row.insertCell(2).innerText = contato.telefone;
+                let acoesCell = row.insertCell(3);
+
+                // Botão Editar
+                let editarBtn = document.createElement('button');
+                editarBtn.innerText = 'Editar';
+                editarBtn.onclick = function() {
+                    editarContato(index);
+                };
+                acoesCell.appendChild(editarBtn);
+
+                // Botão Excluir
+                let excluirBtn = document.createElement('button');
+                excluirBtn.innerText = 'Excluir';
+                excluirBtn.onclick = function() {
+                    excluirContato(index);
+                };
+                acoesCell.appendChild(excluirBtn);
+            });
+        }
+
+        formContato.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const nome = nomeInput.value;
+            const email = emailInput.value;
+            const telefone = telefoneInput.value;
+            const index = indexInput.value;
+
+            if (index === '')
+                contatos.push({ nome, email, telefone });
+            else {
+                contatos[index] = { nome, email, telefone };
+                indexInput.value = '';
+            }
+
+            formContato.reset();
+            renderTabela();
+        });
+
+        function editarContato(index) {
+            const contato = contatos[index];
+            nomeInput.value = contato.nome;
+            emailInput.value = contato.email;
+            telefoneInput.value = contato.telefone;
+            indexInput.value = index;
+        }
+
+        function excluirContato(index) {
+            contatos.splice(index, 1);
+            renderTabela();
+        }
+
+
+    //ex 3
+    function atualizarHora() {
+            const relogioElement = document.getElementById('relogio');
+            const agora = new Date();
+            const horas = String(agora.getHours()).padStart(2, '0');
+            const minutos = String(agora.getMinutes()).padStart(2, '0');
+            const segundos = String(agora.getSeconds()).padStart(2, '0');
+            relogioElement.textContent = `${horas}:${minutos}:${segundos}`;
+        }
+        setInterval(atualizarHora, 1000);
+
+    atualizarHora();
+
+
+    //ex 4
+    document.getElementById('calculadora').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            const num1 = parseFloat(document.getElementById('numero1').value);
+            const num2 = parseFloat(document.getElementById('numero2').value);
+            const operacao = document.getElementById('operacao').value;
+            let resultado;
+
+            switch (operacao) {
+                case 'adicao':
+                    resultado = num1 + num2;
+                    break;
+                case 'subtracao':
+                    resultado = num1 - num2;
+                    break;
+                case 'multiplicacao':
+                    resultado = num1 * num2;
+                    break;
+                case 'divisao':
+                    if (num2 === 0) {
+                        resultado = "Erro: Divisão por zero!";
+                    } else {
+                        resultado = num1 / num2;
+                    }
+                    break;
+                default:
+                    resultado = "Operação inválida!";
+            }
+
+            document.getElementById('resultado').innerText = `Resultado: ${resultado}`;
+        });
+  </script>
+</body>
+</html>
