@@ -1,4 +1,4 @@
-//package br.uscs;
+package br.uscs;
 
 import java.util.HashMap;
 import java.util.Iterator;
