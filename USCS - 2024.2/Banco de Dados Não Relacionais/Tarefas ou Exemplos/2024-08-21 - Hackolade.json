@@ -952,15 +952,16 @@
     "creationTS": "2024-08-21T23:08:03.328Z",
     "GUID": "e87a5f78-0cd6-4f11-b800-dbe667bd98da",
     "isLineageEnabled": false,
-    "lastModifTS": "2024-08-21T23:54:24.374Z",
+    "lastModifTS": "2024-09-19T02:41:40.253Z",
     "persistenceSchemaVersion": "7",
     "isCreatedByPlugin": true,
     "pluginInformation": {
         "pluginEngineVersion": "1.0.0"
     },
     "applicationInformation": {
-        "version": "7.2.3"
+        "version": "7.7.8"
     },
+    "hackoladeMeta": {},
     "settings": {
         "centralPane": {
             "dbLevel": {
