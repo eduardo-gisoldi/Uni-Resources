@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d804c12-0761-4887-b4f5-b0a2bf714ff4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/USCS - 2024.2/Arquitetura de Software e Soluções Computacionais/Tarefas/Tarefa_2_01-Eduardo_03AN (ArqSoft) (1).docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/USCS - 2024.2/Arquitetura de Software e Soluções Computacionais/Tarefas/br/uscs/t3_01.kt" beforeDir="false" afterPath="$PROJECT_DIR$/USCS - 2024.2/Arquitetura de Software e Soluções Computacionais/Tarefas/br/uscs/t3_01.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/USCS - 2024.2/Desenvolvimento de Aplicativos/Tarefas/t3_01.jar" beforeDir="false" afterPath="$PROJECT_DIR$/USCS - 2024.2/Desenvolvimento de Aplicativos/Tarefas/t3_01.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/USCS - 2024.2/Desenvolvimento de Aplicativos/Tarefas/t3_01.kt" beforeDir="false" afterPath="$PROJECT_DIR$/USCS - 2024.2/Desenvolvimento de Aplicativos/Tarefas/t3_01.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Uni-Resources.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Uni-Resources.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,9 +19,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2mGUq6Gc3TtmqaZQRbF8DhcMV4z" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -26,19 +29,34 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JAR Application.t3_01.jar (1).executor": "Run",
     "JAR Application.t3_01.jar.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true"
+    "kotlin-language-version-configured": "true",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RunManager">
-    <configuration name="t3_01.jar" type="JarApplication" temporary="true">
-      <option name="JAR_PATH" value="$PROJECT_DIR$/USCS - 2024.2/Arquitetura de Software e Soluções Computacionais/Tarefas/br/uscs/t3_01.jar" />
+    <configuration name="t3_01.jar (1)" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/USCS - 2024.2/Desenvolvimento de Aplicativos/Tarefas/t3_01.jar" />
       <method v="2" />
     </configuration>
+    <configuration name="t3_01.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/USCS - 2024.2/Arquitetura de Software e Soluções Computacionais/Tarefas/br/uscs/t3_01.jar" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="JAR Application.t3_01.jar (1)" />
+      <item itemvalue="JAR Application.t3_01.jar" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JAR Application.t3_01.jar (1)" />
         <item itemvalue="JAR Application.t3_01.jar" />
       </list>
     </recent_temporary>
