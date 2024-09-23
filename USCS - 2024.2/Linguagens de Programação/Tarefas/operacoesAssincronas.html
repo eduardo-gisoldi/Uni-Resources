@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicios Operacoes Assincronas</title>
+    <script>
+      //ex 1
+      async function delayedHello() {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve("Hello");
+          }, 3000);
+        });
+      }
+
+      async function runDelayedHello() {
+        const message = await delayedHello();
+        console.log(message); 
+      }
+
+
+      //ex 2
+      async function asyncCounter() {
+        for (let i = 1; i <= 5; i++) {
+          console.log(i);
+          await new Promise((resolve) => setTimeout(resolve, 1000));
+        }
+      }
+
+
+      //ex 3
+      async function delay(seconds) {
+        return new Promise((resolve) => {
+          setTimeout(resolve, seconds * 1000); // Delay em segundos
+        });
+      }
+
+      async function chainDelays() {
+        for (let i = 0; i < 3; i++) {
+          await delay(2);
+          console.log(" ex3 %d", i+1);
+        }
+      }
+
+      //testes
+      window.onload = async function () {
+        console.log("Executando ex 1");
+        await runDelayedHello()
+        .then()
+        .catch((error) => {
+          console.error("Encontramos um erro");          
+        });
+
+        console.log("Executando ex 2");
+        await asyncCounter()
+        .then()
+        .catch((error) => {
+          console.error("Encontramos um erro");          
+        });
+
+        console.log("Executando ex 3");
+        await chainDelays()
+        .then()
+        .catch((error) => {
+          console.error("Encontramos um erro");          
+        });
+      };
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
