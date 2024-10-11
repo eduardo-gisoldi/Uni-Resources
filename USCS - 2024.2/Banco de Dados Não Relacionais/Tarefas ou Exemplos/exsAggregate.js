@@ -69,6 +69,8 @@ db.filmes.aggregate([
         "atores_americanos": "$atoresLookup.nome"
     }}
 ])
+// uma solução melhor usa atores e match antes do lookup
+
 
 //ex 6 - Para cada avaliação, liste o título do filme avaliado, o nome do usuário que fez a avaliação e a nacionalidade do diretor.
 db.avaliacoes.aggregate([
@@ -102,3 +104,5 @@ db.avaliacoes.aggregate([
         comentario: 1
     }}
 ])
+
+// uma maneira melhor de fazer isso seria usando o subdoc de diretor dento de filmes ao inves de fazer um lookup pros diretores
