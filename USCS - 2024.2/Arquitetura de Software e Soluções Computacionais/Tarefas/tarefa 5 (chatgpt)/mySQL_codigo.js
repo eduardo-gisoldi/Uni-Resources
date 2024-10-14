@@ -1,0 +1,7 @@
+CREATE TABLE CapitaisPaises (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  pais VARCHAR(100),
+  capital VARCHAR(100)
+);
+
+
