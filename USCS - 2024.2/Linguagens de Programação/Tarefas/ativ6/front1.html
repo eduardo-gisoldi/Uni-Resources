@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <!-- Metadados -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastramento de Produtos</title>
+</head>
+<body>
+  <!-- Título -->
+  <h2>Cadastramento de Produtos</h2>
+  <!-- Formulário -->
+  <form id="productForm">
+    <div>
+      <!-- ID -->
+      <label for="id">ID:</label>
+      <input type="number" id="id" placeholder="ID" required />
+    </div>
+    <div>
+      <!-- Nome -->
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" placeholder="Nome" required />
+    </div>
+    <!-- Botões -->
+    <button type="submit">Cadastrar</button>
+    <button type="button" id="cancelBtn">Cancelar</button>
+  </form>
+  <!-- Tabela -->
+  <table>
+    <thead>
+      <tr>
+        <!-- Cabeçalhos -->
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody id="productsTable"></tbody>
+  </table>
+
+  <script>
+    // Variáveis
+    let produtos = [];
+    let produtoAtual = null;
+
+    // Exibir
+    function displayProducts() {
+      const tbody = document.getElementById("productsTable");
+      tbody.innerHTML = "";
+      produtos.forEach((produto) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${produto.id}</td>
+          <td>${produto.nome}</td>
+          <td>
+            <button onclick="editProduct(${produto.id})">Alterar</button>
+            <button onclick="deleteProduct(${produto.id})">Remover</button>
+          </td>`;
+        tbody.appendChild(row);
+      });
+    }
+
+    // Editar
+    function editProduct(id) {
+      produtoAtual = id;
+      const produto = produtos.find((p) => p.id === id);
+      document.getElementById("id").value = produto.id;
+      document.getElementById("nome").value = produto.nome;
+      document.getElementById("cancelBtn").style.display = "inline-block";
+    }
+
+    // Deletar
+    function deleteProduct(id) {
+      fetch("http://localhost:3000/produtos/" + id, { method: "DELETE" })
+        .then(() => {
+          produtos = produtos.filter((p) => p.id !== id);
+          displayProducts();
+        })
+        .catch((error) => console.error("Error:", error));
+    }
+
+    // Submissão
+    document.getElementById("productForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+      const produto = {
+        id: parseInt(document.getElementById("id").value),
+        nome: document.getElementById("nome").value,
+      };
+      if (produtoAtual) {
+        fetch("http://localhost:3000/produtos/" + produtoAtual, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(produto),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            const index = produtos.findIndex((p) => p.id === produtoAtual);
+            produtos[index] = data;
+            displayProducts();
+            document.getElementById("productForm").reset();
+            produtoAtual = null;
+            document.getElementById("cancelBtn").style.display = "none";
+          })
+          .catch((error) => console.error("Error:", error));
+      } else {
+        fetch("http://localhost:3000/produtos", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(produto),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            produtos.push(data);
+            displayProducts();
+            document.getElementById("productForm").reset();
+          })
+          .catch((error) => console.error("Error:", error));
+      }
+    });
+
+    // Cancelar
+    document.getElementById("cancelBtn").addEventListener("click", function () {
+      produtoAtual = null;
+      document.getElementById("productForm").reset();
+      this.style.display = "none";
+    });
+
+    // Fetch inicial
+    fetch("http://localhost:3000/produtos")
+      .then((response) => response.json())
+      .then((data) => {
+        produtos = data;
+        displayProducts();
+      })
+      .catch((error) => console.error("Error:", error));
+  </script>
+</body>
+</html>
